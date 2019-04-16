@@ -1,10 +1,13 @@
 const express = require('express');
 const router = express.Router();
 
-const { article } = require('../controllers/products');
+const { getArticle, getArticles, saveArticle } = require('../controllers/products');
 const { authMiddleware } = require('../middlewares/auth');
 const admin = require('../middlewares/isAdmin');
 
-router.post('/article', authMiddleware, admin, article)
+router.get('/articles', getArticles)
+
+router.get('/articles_by_id', getArticle);
+router.post('/article', authMiddleware, admin, saveArticle)
 
 module.exports = router;

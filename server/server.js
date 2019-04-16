@@ -10,7 +10,7 @@ const products = require('./routes/products');
 
 const app = express();
 
-app.use(express.urlencoded());
+//app.use(express.urlencoded({extended: true}));
 app.use(express.json());
 app.use(cookieParser());
 
