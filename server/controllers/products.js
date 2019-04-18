@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 const Product = require("../models/product");
 
-const getArticle = (req, res) => {
+const getArticleById = (req, res) => {
   const type = req.query.type;
   const items = req.query.id;
 
@@ -50,7 +50,7 @@ const saveArticle = (req, res) => {
 };
 
 module.exports = {
-  getArticle,
+  getArticleById,
   getArticles,
   saveArticle
 };
