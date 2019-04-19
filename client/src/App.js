@@ -1,18 +1,12 @@
-import React, { Component } from "react";
-import axios from 'axios';
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 
-class App extends Component {
-  
-  componentDidMount() {
-    axios.get('/products/article')
-      .then((doc) => {
-        console.log(doc)
-      });
-  }
+export default () => {
+  useEffect(() => {
+    axios.get("/product/articles").then(doc => {
+      console.log(doc);
+    });
+  }, []);
 
-  render() {
-    return <div></div>
-  }
-}
-
-export default App;
+  return <div>App</div>;
+};
