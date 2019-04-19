@@ -1,12 +1,17 @@
 import React, { useState, useEffect } from "react";
+import { Switch, Route} from 'react-router-dom';
+import './App.css';
 import axios from "axios";
 
-export default () => {
-  useEffect(() => {
-    axios.get("/product/articles").then(doc => {
-      console.log(doc);
-    });
-  }, []);
+import Layout from './components/hoc/Layout';
+import Home from './components/Home';
 
-  return <div>App</div>;
+export default () => {
+  return (
+    <Layout>
+      <Switch>
+        <Route path="/" exact component={Home} />
+      </Switch>
+    </Layout>
+  )
 };
